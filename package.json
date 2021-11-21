@@ -3,16 +3,29 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@testing-library/jest-dom": "^5.15.0",
-    "@testing-library/react": "^11.2.7",
-    "@testing-library/user-event": "^12.8.3",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
+    "@testing-library/jest-dom": "5.15.0",
+    "@testing-library/react": "11.2.7",
+    "@testing-library/user-event": "12.8.3",
+    "cors": "2.8.5",
+    "express": "4.17.1",
+    "history": "5.1.0",
+    "node-sass": "6.0.1",
+    "peer": "0.6.1",
+    "peerjs-client": "0.3.15",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "react-router-dom": "6.0.1",
     "react-scripts": "4.0.3",
-    "web-vitals": "^1.1.2"
+    "socket.io": "4.3.2",
+    "socket.io-client": "4.3.2"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "dev:peer": "PORT=9000 nodemon peer-server.js",
+    "dev:server": "PORT=8080 nodemon server.js",
+    "dev:app": "react-scripts start",
+    "start:peer": "node peer-server.js",
+    "start:server": "node server.js",
+    "start": "node index.js",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -34,5 +47,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "engines": {
+    "node": "16.x"
   }
 }
