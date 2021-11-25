@@ -67,7 +67,6 @@ class ViewVideoChat extends React.Component{
                 map[i].peerDataConnection = map[i].peerDataConnection || null
                 return map
               }, { ...this.state.users })
-
               // remove disconnected users
               Object.keys(this.state.users).filter(userId => !args.includes(userId)).forEach(disconnectedUserId => {
                 this.hangUpOnUser(users[disconnectedUserId], true)
@@ -93,7 +92,7 @@ class ViewVideoChat extends React.Component{
         secure: process.env.REACT_APP_PEER_PORT === '443' ? true : undefined,
         path: '/vvpc-peer',
         key: 'vvcp',
-        debug: true,
+        // debug: true,
       })
 
       // event: someone is calling so we answer
@@ -137,7 +136,6 @@ class ViewVideoChat extends React.Component{
   }
 
   render(){
-    console.log('>> render state', this.state)
     var users = Object.values(this.state.users)
       .filter(u => !!u.stream)
       .sort((a,b) => {
